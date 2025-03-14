@@ -1,0 +1,1266 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planilha de Organização para Mulheres Cristãs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"> <!-- Boxicons para ícones -->
+    <style>
+        :root {
+            --primary: #4a148c;
+            --secondary: #f8f9fa;
+            --text-dark: #212529;
+            --text-light: #6c757d;
+            --light: #ffffff;
+            --gradient: linear-gradient(135deg, #4a148c, #7b1fa2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--secondary);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 90px 0;
+            position: relative;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 25px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background-color: #5e17eb;
+        }
+
+        .btn-light { /* Novo estilo para botão claro */
+            background-color: var(--light);
+            color: var(--primary);
+        }
+
+        .btn-light:hover {
+            background-color: #f0f0f0; /* Cor de hover mais clara para botão claro */
+        }
+
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            padding: 15px 0; /* Reduced header padding for smaller screens */
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 120px; /* Adjusted padding for fixed header */
+            background: var(--secondary) url('/api/placeholder/1200/800') center/cover no-repeat;
+            min-height: 70vh; /* Reduced hero height for better mobile view */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-bottom: 60px; /* Added padding bottom to hero */
+        }
+
+        .hero-container { /* Novo container para layout flexível do Hero */
+            display: flex;
+            flex-direction: column; /* Empilha verticalmente em telas menores */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 600px; /* Reduzindo largura do conteúdo para layout lado a lado */
+            margin-bottom: 30px; /* Espaço entre texto e mockup em mobile */
+        }
+
+        h1.hero-title {
+            font-size: 3.5rem; /* Slightly reduced hero title size */
+            background: none;
+            -webkit-text-fill-color: var(--text-dark);
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .hero p {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            max-width: 90%; /* Aumentando largura máxima para o texto no layout lado a lado */
+            margin: 20px auto 30px;
+        }
+
+        .hero-mockup {
+            max-width: 400px; /* Largura máxima para o mockup no Hero */
+            width: 100%; /* Garante que o mockup seja responsivo */
+        }
+
+        /* Benefits Cards */
+        .benefits {
+            background-color: var(--secondary);
+            padding: 70px 0; /* Reduced section padding for smaller screens */
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax for card width */
+            gap: 25px; /* Reduced gap for smaller screens */
+            margin-top: 40px; /* Reduced margin top for smaller screens */
+        }
+
+        .card {
+            background: var(--light);
+            border-radius: 12px;
+            padding: 25px; /* Reduced card padding for smaller screens */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--primary);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 2.5rem; /* Slightly reduced icon size */
+            color: var(--primary);
+            margin-bottom: 20px; /* Reduced margin bottom for smaller screens */
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Mockup Section */
+        .mockup {
+            background-color: var(--secondary);
+            overflow: hidden;
+            padding: 70px 0; /* Reduced section padding for smaller screens */
+        }
+
+        .mockup-container {
+            position: relative;
+            perspective: 1200px;
+        }
+
+        .mockup-image {
+            width: 100%;
+            max-width: 550px; /* Reduced max width for smaller screens */
+            margin: 0 auto;
+            display: block;
+            transform: rotateY(10deg) rotateX(3deg);
+            box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            transition: transform 0.4s;
+        }
+
+        .mockup-image:hover {
+            transform: rotateY(0) rotateX(0);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 70px 0; /* Reduced section padding for smaller screens */
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted minmax for feature item width */
+            gap: 20px; /* Reduced gap for smaller screens */
+            margin: 40px 0; /* Reduced margin for smaller screens */
+        }
+
+        .feature-item {
+            padding: 20px; /* Reduced feature item padding for smaller screens */
+            background: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Problems Section */
+        .problems {
+            background-color: #f8f9fa;
+            padding: 70px 0; /* Reduced section padding for smaller screens */
+        }
+
+        .problem-container {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 35px; /* Reduced problem container padding for smaller screens */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            margin-top: 40px; /* Reduced margin top for smaller screens */
+        }
+
+        .problem-item {
+            margin-bottom: 25px; /* Reduced margin bottom for smaller screens */
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .problem-icon {
+            color: #dc3545;
+            margin-right: 15px; /* Reduced margin right for smaller screens */
+            font-size: 1.6rem; /* Reduced icon size for smaller screens */
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: var(--gradient);
+            color: var(--light);
+            padding: 70px 0; /* Reduced section padding for smaller screens */
+        }
+
+        .solution h2, .solution p {
+            color: var(--light);
+        }
+
+        .solution .card {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--light);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: none;
+        }
+
+        .solution .card-icon {
+            color: var(--light);
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--light);
+            padding: 70px 0; /* Reduced section padding for smaller screens */
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax for testimonial card width */
+            gap: 30px; /* Reduced gap for smaller screens */
+            margin-top: 40px; /* Reduced margin top for smaller screens */
+        }
+
+        .testimonial-card {
+            background: var(--secondary);
+            border-radius: 15px;
+            padding: 30px; /* Reduced testimonial card padding for smaller screens */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px; /* Adjusted quote position for smaller screens */
+            left: 20px; /* Adjusted quote position for smaller screens */
+            font-size: 2.5rem; /* Reduced quote size for smaller screens */
+            color: rgba(0, 0, 0, 0.05);
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-card p {
+            color: var(--text-dark);
+            font-style: italic;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-top: 20px; /* Reduced margin top for smaller screens */
+        }
+
+        .testimonial-age {
+            color: var(--text-light);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--primary) url('/api/placeholder/1200/800') center/cover no-repeat;
+            background-blend-mode: multiply;
+            color: var(--light);
+            text-align: center;
+            padding: 100px 0; /* Reduced section padding for smaller screens */
+        }
+
+        .cta h2, .cta p {
+            color: var(--light);
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas maiores para benefits-list */
+            gap: 20px; /* Reduced gap for smaller screens */
+            margin: 40px 0; /* Reduced margin for smaller screens */
+            text-align: left; /* Keep text-align: left on benefits-list to align items in grid, but center content inside each item */
+        }
+
+        .benefit-item {
+            display: flex;
+            flex-direction: column; /* Stack icon and text vertically */
+            align-items: center; /* Center items horizontally within benefit-item */
+            text-align: center; /* Center text horizontally */
+            margin-bottom: 20px; /* Reduced margin bottom for smaller screens */
+        }
+
+        .benefit-item p {
+            text-align: center; /* Ensure text is centered within p tag */
+        }
+
+
+        .check-icon {
+            color: var(--light);
+            margin-right: 0; /* Remove right margin for centered layout */
+            margin-bottom: 10px; /* Add margin below icon */
+            font-size: 1.3rem; /* Reduced icon size for smaller screens */
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cta .card {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: none;
+        }
+
+        .cta .card-icon {
+            color: var(--light);
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background-color: var(--secondary);
+            text-align: center;
+            padding: 70px 0; /* Reduced section padding for smaller screens */
+        }
+
+        .price-card {
+            max-width: 500px; /* Reduced max width for smaller screens */
+            margin: 50px auto; /* Reduced margin for smaller screens */
+            background: var(--light);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px; /* Reduced price card padding for smaller screens */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: var(--gradient);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .price-card h3 {
+            font-size: 1.6rem; /* Reduced h3 size for smaller screens */
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: var(--text-light);
+            font-size: 1.2rem; /* Reduced font size for smaller screens */
+        }
+
+        .current-price {
+            font-size: 2.5rem; /* Reduced font size for smaller screens */
+            color: var(--primary);
+            font-weight: 700;
+            margin: 20px 0; /* Reduced margin for smaller screens */
+        }
+
+        .price-card .btn {
+            width: 100%;
+            margin-top: 30px; /* Reduced margin top for smaller screens */
+            font-size: 1.1rem; /* Reduced font size for smaller screens */
+        }
+
+        .price-card p {
+            font-size: 0.95rem; /* Reduced font size for smaller screens */
+            color: var(--text-light);
+            margin-top: 20px; /* Reduced margin top for smaller screens */
+        }
+
+        .price-card .limited-offer {
+            background: var(--primary);
+            color: var(--light);
+            padding: 8px 12px; /* Reduced padding for smaller screens */
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 20px; /* Reduced margin bottom for smaller screens */
+            font-size: 0.85rem; /* Reduced font size for smaller screens */
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            padding: 40px 0; /* Reduced footer padding for smaller screens */
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #7b1fa2;
+        }
+
+        .footer-links {
+            margin-bottom: 15px; /* Reduced margin bottom for smaller screens */
+        }
+
+        .footer-links a {
+            margin: 0 10px; /* Reduced margin for smaller screens */
+            font-weight: 500;
+        }
+
+        .footer-guarantee {
+            margin-bottom: 15px; /* Reduced margin bottom for smaller screens */
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+        }
+
+        /* Animações de Entrada */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-fade-in {
+            transform: translateY(0);
+        }
+
+        .animate-slide-up {
+            transform: translateY(0);
+        }
+
+        .animate-slide-left {
+            transform: translateX(-20px);
+        }
+
+        .animate-slide-left.show,
+        .animate-slide-up.show,
+        .animate-fade-in.show,
+        .animate-on-scroll.show {
+            opacity: 1;
+            transform: translateY(0) translateX(0);
+        }
+
+        /* Animation CSS from provided code */
+        .grid-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(3, 1fr);
+          gap: 10px; /* Reduced gap for better fit in Hero */
+          max-width: 400px; /* Adjusted max-width to fit Hero mockup area */
+          max-height: 400px; /* Adjusted max-height to fit Hero mockup area */
+          margin: 0 auto; /* Center the grid container */
+        }
+
+        .person-box {
+          position: relative;
+          width: 100%; /* Make boxes responsive within grid */
+          height: 0;
+          padding-bottom: 100%; /* Maintain square aspect ratio */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          border-radius: 12px;
+          overflow: hidden;
+          transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          background: rgba(255, 255, 255, 0.05);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .person-icon {
+          width: 70%;
+          height: 70%;
+          position: relative;
+          stroke: white;
+          stroke-width: 2;
+          fill: transparent;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          transition: all 0.4s ease;
+        }
+
+        .center-box {
+          border-color: rgba(255, 153, 0, 0.7);
+          transform: scale(1.1);
+          z-index: 2;
+          animation: float 3s infinite ease-in-out;
+        }
+
+        .center-icon {
+          fill: #FF9900;
+          stroke: #FF9900;
+          animation: pulse 1.5s infinite alternate;
+        }
+
+        .person-box:hover {
+          transform: scale(1.15);
+          border-color: rgba(255, 153, 0, 0.7);
+          box-shadow: 0 0 15px rgba(255, 153, 0, 0.5);
+          z-index: 3;
+        }
+
+        .person-box:hover .person-icon {
+          fill: rgba(255, 153, 0, 0.8);
+          animation: morph 0.8s ease-in-out;
+        }
+
+        @keyframes pulse {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(1.1);
+            opacity: 0.9;
+          }
+        }
+
+        @keyframes morph {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.1) rotate(5deg); }
+          100% { transform: scale(1) rotate(-5deg); }
+        }
+
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+
+        .rays {
+          position: absolute;
+          width: 200%;
+          height: 200%;
+          background: radial-gradient(
+            circle,
+            transparent 30%,
+            rgba(255, 153, 0, 0) 70%,
+            rgba(255, 153, 0, 0.1) 100%
+          );
+          animation: rotate 10s linear infinite;
+          pointer-events: none;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .center-box .rays {
+          opacity: 1;
+        }
+
+        .person-box:hover .rays {
+          opacity: 0.6;
+        }
+
+        @keyframes rotate {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
+
+        /* Responsive Design - Media Queries ajustadas para breakpoints menores e tamanhos de fonte */
+        @media (min-width: 769px) { /* Media query para telas maiores que 768px */
+            .hero-container {
+                flex-direction: row; /* Layout lado a lado em telas maiores */
+                justify-content: space-between; /* Espaço entre texto e mockup */
+                align-items: center; /* Alinhar verticalmente ao centro */
+                text-align: left; /* Texto alinhado à esquerda no geral */
+            }
+
+            .hero-content {
+                text-align: left; /* Garantir texto alinhado à esquerda */
+                margin-bottom: 0; /* Remover margem inferior no layout lado a lado */
+                margin-right: 30px; /* Adicionar espaço entre texto e mockup */
+                max-width: 50%; /* Largura máxima para o texto no layout lado a lado */
+            }
+
+            .hero h1.hero-title, .hero p {
+                text-align: left; /* Garantir que títulos e parágrafos estejam alinhados à esquerda */
+                margin-left: 0;
+                margin-right: auto; /* Impede que o texto estique demais */
+            }
+
+            .hero-mockup {
+                max-width: 45%; /* Largura máxima para o mockup no layout lado a lado */
+            }
+
+            .cta .card-container { /* Container para cards de bônus lado a lado no CTA */
+                display: flex;
+                justify-content: center; /* Centralizar os cards horizontalmente */
+                gap: 40px;
+                flex-wrap: nowrap; /* Impede quebrar para a linha de baixo em telas maiores */
+            }
+
+            .cta .card-container .card {
+                flex: 1; /* Cards ocupam espaço igualitário */
+                max-width: 400px; /* Largura máxima para cada card */
+            }
+
+            .benefits-list {
+                grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas maiores para benefits-list */
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding-top: 100px;
+                min-height: auto;
+                padding-bottom: 40px;
+                text-align: center; /* Centralizar texto no hero em telas menores */
+            }
+
+            .hero-content {
+                max-width: 95%; /* Hero content ocupa mais largura em telas menores */
+                text-align: center; /* Centralizar texto no hero content em telas menores */
+            }
+            .hero h1.hero-title, .hero p {
+                text-align: center; /* Centralizar títulos e parágrafos no hero em telas menores */
+            }
+
+            .hero-mockup {
+                max-width: 80%; /* Aumentando mockup para ocupar mais espaço em mobile */
+            }
+
+            .mockup-image {
+                transform: none;
+            }
+
+            .cards-container,
+            .features-grid,
+            .testimonial-grid,
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+
+            .price-card {
+                max-width: 95%;
+                padding: 35px;
+            }
+
+            .testimonial-card {
+                padding: 25px;
+            }
+
+            .problem-container {
+                padding: 30px;
+            }
+
+            .cta {
+                padding: 80px 0;
+            }
+
+            .cta .card-container { /* Garante que os cards de bônus ficam empilhados em mobile */
+                flex-direction: column;
+                gap: 20px; /* Aumenta o gap entre os cards empilhados */
+                align-items: center; /* Centraliza os cards horizontalmente em mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            h3 {
+                font-size: 1.4rem;
+            }
+
+            p, .btn {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 12px 24px;
+            }
+
+            .price-card {
+                padding: 25px;
+            }
+
+            .testimonial-card {
+                padding: 20px;
+            }
+
+            .problem-container {
+                padding: 25px;
+            }
+
+            .hero {
+                padding-top: 90px;
+            }
+
+            .card-icon {
+                font-size: 2rem; /* Further reduced icon size for very small screens */
+                margin-bottom: 15px;
+            }
+
+            .grid-container { /* Adjust grid for very small screens if needed */
+              gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container text-center">
+            <!-- Logo pode vir aqui se precisar -->
+            <!-- <a href="#" class="logo">Logo Minimalista</a> -->
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container hero-container">
+                <div class="hero-content animate-on-scroll show animate-fade-in" data-animation="animate-fade-in">
+                    <h1 class="hero-title">Organize Sua Vida Cristã com Simplicidade</h1>
+                    <p>Uma ferramenta minimalista e focada para mulheres cristãs que buscam propósito e organização em sua rotina diária.</p>
+                    <a href="#pricing" class="btn">Quero Começar Agora</a>
+                </div>
+                <div class="hero-mockup animate-on-scroll show animate-fade-in" data-animation="animate-fade-in">
+                    <div class="grid-container">
+                        <!-- Row 1 -->
+                        <div class="person-box">
+                          <div class="rays"></div>
+                          <svg class="person-icon" viewBox="0 0 100 100">
+                            <circle cx="50" cy="30" r="15" />
+                            <line x1="50" y1="45" x2="50" y2="80" />
+                            <line x1="30" y1="60" x2="70" y2="60" />
+                            <line x1="50" y1="80" x2="30" y2="100" />
+                            <line x1="50" y1="80" x2="70" y2="100" />
+                          </svg>
+                        </div>
+                        <div class="person-box">
+                          <div class="rays"></div>
+                          <svg class="person-icon" viewBox="0 0 100 100">
+                            <circle cx="50" cy="30" r="15" />
+                            <line x1="50" y1="45" x2="50" y2="80" />
+                            <line x1="30" y1="60" x2="70" y2="60" />
+                            <line x1="50" y1="80" x2="30" y2="100" />
+                            <line x1="50" y1="80" x2="70" y2="100" />
+                          </svg>
+                        </div>
+                        <div class="person-box">
+                          <div class="rays"></div>
+                          <svg class="person-icon" viewBox="0 0 100 100">
+                            <circle cx="50" cy="30" r="15" />
+                            <line x1="50" y1="45" x2="50" y2="80" />
+                            <line x1="30" y1="60" x2="70" y2="60" />
+                            <line x1="50" y1="80" x2="30" y2="100" />
+                            <line x1="50" y1="80" x2="70" y2="100" />
+                          </svg>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="person-box">
+                          <div class="rays"></div>
+                          <svg class="person-icon" viewBox="0 0 100 100">
+                            <circle cx="50" cy="30" r="15" />
+                            <line x1="50" y1="45" x2="50" y2="80" />
+                            <line x1="30" y1="60" x2="70" y2="60" />
+                            <line x1="50" y1="80" x2="30" y2="100" />
+                            <line x1="50" y1="80" x2="70" y2="100" />
+                          </svg>
+                        </div>
+                        <div class="person-box center-box">
+                          <div class="rays"></div>
+                          <svg class="person-icon center-icon" viewBox="0 0 100 100">
+                            <circle cx="50" cy="30" r="15" />
+                            <line x1="50" y1="45" x2="50" y2="80" />
+                            <line x1="30" y1="60" x2="70" y2="60" />
+                            <line x1="50" y1="80" x2="30" y2="100" />
+                            <line x1="50" y1="80" x2="70" y2="100" />
+                          </svg>
+                        </div>
+                        <div class="person-box">
+                          <div class="rays"></div>
+                          <svg class="person-icon" viewBox="0 0 100 100">
+                            <circle cx="50" cy="30" r="15" />
+                            <line x1="50" y1="45" x2="50" y2="80" />
+                            <line x1="30" y1="60" x2="70" y2="60" />
+                            <line x1="50" y1="80" x2="30" y2="100" />
+                            <line x1="50" y1="80" x2="70" y2="100" />
+                          </svg>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="person-box">
+                          <div class="rays"></div>
+                          <svg class="person-icon" viewBox="0 0 100 100">
+                            <circle cx="50" cy="30" r="15" />
+                            <line x1="50" y1="45" x2="50" y2="80" />
+                            <line x1="30" y1="60" x2="70" y2="60" />
+                            <line x1="50" y1="80" x2="30" y2="100" />
+                            <line x1="50" y1="80" x2="70" y2="100" />
+                          </svg>
+                        </div>
+                        <div class="person-box">
+                          <div class="rays"></div>
+                          <svg class="person-icon" viewBox="0 0 100 100">
+                            <circle cx="50" cy="30" r="15" />
+                            <line x1="50" y1="45" x2="50" y2="80" />
+                            <line x1="30" y1="60" x2="70" y2="60" />
+                            <line x1="50" y1="80" x2="30" y2="100" />
+                            <line x1="50" y1="80" x2="70" y2="100" />
+                          </svg>
+                        </div>
+                        <div class="person-box">
+                          <div class="rays"></div>
+                          <svg class="person-icon" viewBox="0 0 100 100">
+                            <circle cx="50" cy="30" r="15" />
+                            <line x1="50" y1="45" x2="50" y2="80" />
+                            <line x1="30" y1="60" x2="70" y2="60" />
+                            <line x1="50" y1="80" x2="30" y2="100" />
+                            <line x1="50" y1="80" x2="70" y2="100" />
+                          </svg>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Cards -->
+        <section class="benefits" id="benefits">
+            <div class="container text-center">
+                <h2 class="animate-on-scroll" data-animation="animate-fade-in">Benefícios Essenciais para sua Jornada</h2>
+                <p class="animate-on-scroll" data-animation="animate-fade-in">Descubra como a planilha simplifica sua organização e fortalece sua fé.</p>
+
+                <div class="cards-container">
+                    <div class="card animate-on-scroll" data-animation="animate-slide-up">
+                        <div class="card-icon"><i class='bx bx-target-lock'></i></div>
+                        <h3>Foco e Clareza</h3>
+                        <p>Mantenha o foco no que realmente importa, alinhando suas ações com seus valores cristãos.</p>
+                    </div>
+
+                    <div class="card animate-on-scroll" data-animation="animate-slide-up">
+                        <div class="card-icon"><i class='bx bx-calendar-check'></i></div>
+                        <h3>Rotina Intencional</h3>
+                        <p>Crie uma rotina diária intencional, com tempo para Deus, família e seus compromissos.</p>
+                    </div>
+
+                    <div class="card animate-on-scroll" data-animation="animate-slide-up">
+                        <div class="card-icon"><i class='bx bx-heart'></i></div>
+                        <h3>Paz e Equilíbrio</h3>
+                        <p>Alcance paz interior e equilíbrio em todas as áreas da sua vida, com organização e propósito.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mockup Section -->
+        <section class="mockup" id="mockup">
+            <div class="container text-center">
+                <h2 class="animate-on-scroll" data-animation="animate-fade-in">Visualize a Simplicidade da Planilha</h2>
+                <p class="animate-on-scroll" data-animation="animate-fade-in">Um design limpo e intuitivo, fácil de usar e focado na sua organização.</p>
+
+                <div class="mockup-container animate-on-scroll" data-animation="animate-fade-in">
+                    <img src="/api/placeholder/800/500" alt="Mockup da Planilha" class="mockup-image animate-float">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <div class="container text-center">
+                <h2 class="animate-on-scroll" data-animation="animate-fade-in">Recursos Práticos para Organizar Seu Dia a Dia</h2>
+                <p class="animate-on-scroll" data-animation="animate-fade-in">Tudo o que você precisa em um sistema simples e direto, sem distrações.</p>
+
+                <div class="features-grid">
+                    <div class="feature-item animate-on-scroll" data-animation="animate-slide-up">
+                        <h3>Visão Semanal Clara</h3>
+                        <p>Planeje sua semana de forma visual e intuitiva, com todos os seus compromissos em um só lugar.</p>
+                    </div>
+                    <div class="feature-item animate-on-scroll" data-animation="animate-slide-up">
+                        <h3>Definição de Prioridades</h3>
+                        <p>Identifique e foque nas tarefas mais importantes, alinhadas com seus objetivos e fé.</p>
+                    </div>
+
+                    <div class="feature-item animate-on-scroll" data-animation="animate-slide-up">
+                        <h3>Acompanhamento de Hábitos</h3>
+                        <p>Monitore seus hábitos diários e veja seu progresso em direção a uma vida mais organizada e virtuosa.</p>
+                    </div>
+
+                    <div class="feature-item animate-on-scroll" data-animation="animate-slide-up">
+                        <h3>Reflexão e Gratidão</h3>
+                        <p>Reserve um momento para reflexão diária e pratique a gratidão, fortalecendo sua mentalidade positiva.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problems Section -->
+        <section class="problems" id="problems">
+            <div class="container">
+                <h2 class="text-center animate-on-scroll" data-animation="animate-fade-in">Cansada da Desorganização?</h2>
+                <p class="text-center animate-on-scroll" data-animation="animate-fade-in">Identifique os problemas que a planilha te ajuda a superar.</p>
+
+                <div class="problem-container">
+                    <div class="problem-item animate-on-scroll" data-animation="animate-slide-left">
+                        <div class="problem-icon"><i class='bx bx-x-circle' ></i></div>
+                        <div>
+                            <h3>Caos na Rotina</h3>
+                            <p>Dias corridos e desorganizados, sem tempo para o que realmente importa.</p>
+                        </div>
+                    </div>
+
+                    <div class="problem-item animate-on-scroll" data-animation="animate-slide-left">
+                        <div class="problem-icon"><i class='bx bx-x-circle' ></i></div>
+                        <div>
+                            <h3>Metas Distantes</h3>
+                            <p>Dificuldade em definir e alcançar seus objetivos, sentindo-se sobrecarregada.</p>
+                        </div>
+                    </div>
+
+                    <div class="problem-item animate-on-scroll" data-animation="animate-slide-left">
+                        <div class="problem-icon"><i class='bx bx-x-circle' ></i></div>
+                        <div>
+                            <h3>Falta de Propósito</h3>
+                            <p>Sensação de falta de propósito e direção, com dificuldade em equilibrar fé e vida prática.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center animate-on-scroll" data-animation="animate-fade-in" style="margin-top: 50px;">
+                    <h3>Transforme sua Rotina e Viva com Intencionalidade!</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="solution" id="solution">
+            <div class="container text-center">
+                <h2 class="text-center animate-on-scroll" data-animation="animate-fade-in">A Solução Minimalista para sua Organização Cristã</h2>
+                <p class="animate-on-scroll" data-animation="animate-fade-in">Um sistema focado em simplicidade, eficiência e alinhamento com seus valores.</p>
+
+                <div class="cards-container">
+                    <div class="card animate-on-scroll" data-animation="animate-slide-up" style="background: rgba(255, 255, 255, 0.08); color: var(--light); border-color: rgba(255, 255, 255, 0.2);">
+                        <div class="card-icon" style="color: var(--light);"><i class='bx bx-check-circle' ></i></div>
+                        <h3>Simples e Intuitiva</h3>
+                        <p>Fácil de usar, sem curva de aprendizado complexa. Comece a organizar sua vida agora mesmo.</p>
+                    </div>
+
+                    <div class="card animate-on-scroll" data-animation="animate-slide-up" style="background: rgba(255, 255, 255, 0.08); color: var(--light); border-color: rgba(255, 255, 255, 0.2);">
+                        <div class="card-icon" style="color: var(--light);"><i class='bx bx-filter-alt' ></i></div>
+                        <h3>Foco no Essencial</h3>
+                        <p>Sem distrações, apenas as ferramentas que você realmente precisa para se organizar.</p>
+                    </div>
+
+                    <div class="card animate-on-scroll" data-animation="animate-slide-up" style="background: rgba(255, 255, 255, 0.08); color: var(--light); border-color: rgba(255, 255, 255, 0.2);">
+                        <div class="card-icon" style="color: var(--light);"><i class='bx bx-rocket' ></i></div>
+                        <h3>Resultados Reais</h3>
+                        <p>Organização prática que gera resultados visíveis em sua rotina e vida espiritual.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" id="testimonials">
+            <div class="container text-center">
+                <h2 class="animate-on-scroll" data-animation="animate-fade-in">Depoimentos de Mulheres Transformadas</h2>
+                <p class="animate-on-scroll" data-animation="animate-fade-in">Veja como a planilha impactou positivamente a vida de outras mulheres cristãs.</p>
+
+                <div class="testimonial-grid">
+                    <div class="testimonial-card animate-on-scroll" data-animation="animate-slide-left">
+                        <p>"A planilha me trouxe clareza e organização. Consigo equilibrar minhas tarefas diárias com meu tempo devocional, sem me sentir sobrecarregada. Uma ferramenta essencial!"</p>
+                        <div class="testimonial-name">Ana Paula</div>
+                        <div class="testimonial-age">29 anos</div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll" data-animation="animate-slide-left">
+                        <p>"Com a planilha, finalmente encontrei um sistema que funciona para mim. Consigo planejar minha semana, acompanhar meus hábitos e ainda ter tempo para cuidar de mim e da minha família. Super recomendo!"</p>
+                        <div class="testimonial-name">Carla</div>
+                        <div class="testimonial-age">35 anos</div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll" data-animation="animate-slide-left">
+                        <p>"Eu estava perdida na desorganização, até encontrar essa planilha. Ela me ajudou a ter uma rotina mais intencional e focada em Deus. Sinto mais paz e produtividade no meu dia a dia."</p>
+                        <div class="testimonial-name">Juliana</div>
+                        <div class="testimonial-age">24 anos</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta" id="cta">
+            <div class="container text-center">
+                <h2 class="animate-on-scroll" data-animation="animate-fade-in">Simplifique Sua Organização Agora Mesmo!</h2>
+                <p class="animate-on-scroll" data-animation="animate-fade-in">Adquira a planilha e transforme sua rotina em uma jornada de propósito e paz.</p>
+
+                <div class="benefits-list">
+                    <div class="benefit-item animate-on-scroll" data-animation="animate-slide-up">
+                        <div class="check-icon"><i class='bx bx-list-check' ></i></div>
+                        <p>Planejamento semanal intuitivo e fácil de usar</p>
+                    </div>
+
+                    <div class="benefit-item animate-on-scroll" data-animation="animate-slide-up">
+                        <div class="check-icon"><i class='bx bx-sync' ></i></div>
+                        <p>Sistema de acompanhamento de hábitos prático</p>
+                    </div>
+
+                    <div class="benefit-item animate-on-scroll" data-animation="animate-slide-up">
+                        <div class="check-icon"><i class='bx bx-flag-checkered' ></i></div>
+                        <p>Foco nas prioridades e metas importantes</p>
+                    </div>
+
+                    <div class="benefit-item animate-on-scroll" data-animation="animate-slide-up">
+                        <div class="check-icon"><i class='bx bx-glasses' ></i></div>
+                        <p>Design minimalista e sem distrações</p>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll" data-animation="animate-fade-in" style="margin: 50px 0;">
+                    <h3>🎁 Bônus Exclusivos para Você!</h3>
+                    <p>Ao adquirir a planilha, receba também:</p>
+
+                    <div class="card-container"> <!-- Container para cards de bônus lado a lado -->
+                        <div class="card animate-on-scroll" data-animation="animate-slide-up" style="background: rgba(255, 255, 255, 0.1); color: var(--light); border-color: rgba(255, 255, 255, 0.2);">
+                            <div class="card-icon" style="color: var(--light);"><i class='bx bx-checkbox-checked' ></i></div>
+                            <h3>Checklist de Produtividade</h3>
+                            <p>Lista de tarefas essenciais para um dia produtivo e focado.</p>
+                        </div>
+
+                        <div class="card animate-on-scroll" data-animation="animate-slide-up" style="background: rgba(255, 255, 255, 0.1); color: var(--light); border-color: rgba(255, 255, 255, 0.2);">
+                            <div class="card-icon" style="color: var(--light);"><i class='bx bx-list-ol' ></i></div>
+                            <h3>Guia Rápido de Priorização</h3>
+                            <p>Estratégias simples para priorizar tarefas e otimizar seu tempo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#pricing" class="btn btn-light animate-on-scroll" data-animation="animate-fade-in" style="font-size: 1.3rem; padding: 18px 35px;">Quero Organizar Minha Vida Agora</a>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <h2 class="animate-on-scroll" data-animation="animate-fade-in">Oferta Especial Imperdível</h2>
+                <p class="animate-on-scroll" data-animation="animate-fade-in">Adquira a planilha com um preço promocional por tempo limitado!</p>
+
+                <div class="price-card animate-on-scroll" data-animation="animate-fade-in">
+                    <div class="limited-offer">OFERTA LIMITADA</div>
+
+                    <h3>Invista na Sua Organização e Paz Interior</h3>
+
+                    <div>
+                        <div class="original-price">De: R$ 67,00</div>
+                        <div class="current-price">Por Apenas R$ 15,99</div>
+                        <p style="font-size: 0.9rem; margin-top: 10px;">Pagamento único via cartão de crédito ou Pix</p>
+                    </div>
+
+                    <a href="#" class="btn" style="width: 100%; margin-top: 40px; font-size: 1.2rem;">Adquirir Planilha Agora</a>
+
+                    <p style="margin-top: 30px;">Aproveite esta oportunidade única para transformar sua rotina e viver com mais propósito!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Contato</a>
+            </div>
+            <div class="footer-guarantee">
+                Garantia de 7 dias de Satisfação ou seu Dinheiro de Volta.
+            </div>
+            <div class="footer-copyright">
+                © 2025 Planilha de Organização para Mulheres Cristãs. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const animationType = entry.target.dataset.animation;
+                    entry.target.classList.add('show', animationType);
+                } else {
+                    entry.target.classList.remove('show', entry.target.dataset.animation);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animation Script from provided code
+        document.addEventListener('DOMContentLoaded', function() {
+          const personBoxes = document.querySelectorAll('.person-box:not(.center-box)');
+          const allIcons = document.querySelectorAll('.person-icon');
+
+          // Certifique-se de que todos os SVGs estão visíveis
+          allIcons.forEach(icon => {
+            icon.setAttribute('stroke', 'white');
+            icon.setAttribute('stroke-width', '2');
+            icon.setAttribute('fill', 'transparent');
+          });
+
+          // Adiciona animação aos ícones ao passar o mouse
+          personBoxes.forEach(box => {
+            box.addEventListener('mouseover', function() {
+              const icon = this.querySelector('.person-icon');
+              icon.style.fill = 'rgba(255, 153, 0, 0.8)';
+            });
+
+            box.addEventListener('mouseout', function() {
+              const icon = this.querySelector('.person-icon');
+              icon.style.fill = 'transparent';
+            });
+          });
+
+          // Animação aleatória para alguns ícones ocasionalmente
+          setInterval(() => {
+            const randomBox = personBoxes[Math.floor(Math.random() * personBoxes.length)];
+            const icon = randomBox.querySelector('.person-icon');
+
+            icon.style.fill = 'rgba(255, 255, 255, 0.3)';
+            setTimeout(() => {
+              icon.style.fill = 'transparent';
+            }, 700);
+          }, 3000);
+        });
+    </script>
+
+</body></html>
